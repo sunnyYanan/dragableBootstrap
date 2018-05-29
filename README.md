@@ -1,11 +1,12 @@
 拖拽结合 codemirror 的 bootstrap 网页生成
 
+> 下载后直接打开 index 查看 demo
+
 #ibootstrap
 
 * This is layoutit bootstrap builder
 * copied from ibootstrap.cn
 * update bootstrap to 3.3.6
-* see demo: [layoutit](https://sunnyyanan.github.io/qaBootstrap/)
 
 #new feature
 
