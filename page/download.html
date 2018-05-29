@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下载编辑页面</title>
+
+	<link href="../lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <link href="../lib/inspinia_admin-v1.8/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+    <link href="../lib/inspinia_admin-v1.8/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../lib/inspinia_admin-v1.8/css/plugins/steps/jquery.steps.css" rel="stylesheet">
+
+    <link href="../lib/inspinia_admin-v1.8/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="../lib/inspinia_admin-v1.8/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+
+     <!-- Data Tables -->
+    <link href="../lib/inspinia_admin-v1.8/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../lib/inspinia_admin-v1.8/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
+
+    <link href="../css/layoutit.css" rel="stylesheet">
+
+<!--  code mirror-->
+    <script src="../lib/CodeMirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="../lib/CodeMirror/lib/codemirror.css">
+    <script src="../lib/CodeMirror/mode/javascript/javascript.js"></script>
+    <script src="../lib/CodeMirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../lib/CodeMirror/mode/css/css.js"></script>
+    <script src="../lib/CodeMirror/mode/xml/xml.js"></script>
+    <script src="../lib/CodeMirror/addon/edit/closetag.js"></script>
+<script src="../lib/CodeMirror/addon/edit/closebrackets.js"></script>
+<script src="../lib/CodeMirror/addon/display/placeholder.js"></script>
+<!-- <script src="http://static.runoob.com/assets/CodeMirror/lib/codemirror.min.js"></script> -->
+
+	<link rel="stylesheet" href="../css/download.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/inspinia_admin-v1.8/js/jquery-2.1.1.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.htmlClean.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Data picker -->
+   <script src="../lib/inspinia_admin-v1.8/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+   <!-- Steps -->
+    <script src="../lib/inspinia_admin-v1.8/js/plugins/staps/jquery.steps.min.js"></script>
+
+    <!-- SUMMERNOTE -->
+    <script src="../lib/inspinia_admin-v1.8/js/plugins/summernote/summernote.min.js"></script>
+
+    <!-- Data Tables -->
+    <script src="../lib/inspinia_admin-v1.8/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="../lib/inspinia_admin-v1.8/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="../lib/inspinia_admin-v1.8/js/plugins/dataTables/dataTables.responsive.js"></script>
+     <!-- Jquery Validate -->
+    <!-- <script src="lib/inspinia_admin-v1.8/js/plugins/validate/jquery.validate.min.js"></script> -->
+
+   <script src="../js/scripts.js"></script>
+   <script src="../js/download.js"></script>
+
+</head>
+<body style="margin: 16px;padding-top: 0px;">
+	<!-- <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel" aria-hidden="true"> -->
+	<div class="panel-body" style="padding-top:0;">
+			<form role="form" id="compiler-form">
+              <div class="form-group">
+                <div class="row">
+                   <div class="col-md-4" id="htmlDiv" style="padding-right:0;padding-left:0;">
+                    <textarea placeholder="输入 HTML 代码……" id="code-html"  class="form-control" name="code" rows="10">
+                    </textarea>
+                  	<!-- <a href="javascript:void(0);" class="windowLabel" data-panel="js"><span class="label">HTML</span><i class="fa fa-cog"></i> -->
+                                    <a href="javascript:void(0);" class="windowLabel dropdown-toggle" data-panel="js" data-toggle="dropdown"><span class="label">HTML</span><i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                            <li><a onclick="maximizeCur(event,'html');">最大化该窗口</a>
+                                            </li>
+                                            <!-- <li><a onclick="fileDownload('html');">文件下载</a>
+                                            </li> -->
+                                    </ul>
+                    <!-- </a> -->
+                  </div>
+                   <div class="col-md-4" id="cssDiv" style="padding-right:0;padding-left:0;">
+                    <textarea placeholder="输入 CSS 代码……" id="code-css" class="form-control" rows="10"></textarea>
+                 	<a href="javascript:void(0);" class="windowLabel dropdown-toggle" data-panel="js" data-toggle="dropdown"><span class="label">CSS</span><i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                            <li><a onclick="maximizeCur(event,'css');">最大化该窗口</a>
+                                            </li>
+                                            <!-- <li><a onclick="fileDownload('css');">文件下载</a>
+                                            </li> -->
+                                    </ul>
+                  </div>
+                  <div class="col-md-4" id="jsDiv" style="padding-right:0;padding-left:0;">
+                    <textarea placeholder="输入 JavaScript 代码……" id="code-js" class="form-control" name="code" rows="10"></textarea>
+                  	<a href="javascript:void(0);" class="windowLabel dropdown-toggle" data-panel="js" data-toggle="dropdown"><span class="label">JAVASCRIPT</span><i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                            <li><a onclick="maximizeCur(event,'js');">最大化该窗口</a>
+                                            </li>
+                                            <!-- <li><a onclick="fileDownload('js');">文件下载</a>
+                                            </li> -->
+                                    </ul>
+                  </div>
+                </div>
+                 <div class="row">
+                    
+                   <div class="col-md-12"  style="padding-right:0;padding-left:0;">
+                   <a href="javascript:void(0);" class="windowLabel" data-panel="js"><span class="label">结果</span><i class="fa fa-inbox"></i></a>
+                   <section id="output">
+                 	
+                   <iframe id="sandboxed" style="border: 0!important;min-width: 100px;width: 100%;height: 800px;" scrolling="no" sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"
+			src="runner.html"</iframe>
+					</section>
+                  </div>
+                </div>
+              </div>
+             
+             
+            </form>
+			</div>
+</body>
+
+
+</html>
